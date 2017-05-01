@@ -42,7 +42,6 @@ public class EngineInformation {
 	}
 
 	public int NumberOfEngines() {// Ryan
-		;
 		String[] choices = { "1", "2", "3", "4" };
 		String input = (String) JOptionPane.showInputDialog(null, "How Many Engines Does The Plane Have?",
 				"Engine Information", JOptionPane.QUESTION_MESSAGE, null, // U
@@ -56,57 +55,46 @@ public class EngineInformation {
 
 	public int FourEngineLocation() {// Dylan
 
-		//All On Wings?
+		// All On Wings?
 		String Message = ("\nAre All Of The Engines On The Wings?");
-		if(yesno(Message) == true)
+		if (yesno(Message) == true)
 			return 0;
-		else 
+		else
 			return 1;
 	}
 
 	public int TwoEngineLocation() {// JT
-		String Message = ("\n Are The Two Engines On The Wings?");
-		if (yesno(Message) == true)
-			return 0;
-		else {
-			String Message1 = ("\n Are The Two Engines Inside Of The Body?");
-			if (yesno(Message1) == true)
-				return 1;
-			else{
-			String Message2 = ("\n Are The Two Engines On The Body?");
-			if (yesno(Message2) == true)
-				return 2;
-			else
-				return 3;
-			}
-		}
+		String[] choices = { "0 - On The Wings", "1 - On The Body", "2 - In Front Of The Tail", "3 - Other" };
+		String input = (String) JOptionPane.showInputDialog(null, "Where Are The Engines?", "Engine Information",
+				JOptionPane.QUESTION_MESSAGE, null, // U
+													// //
+													// icon
+				choices, // Array of choices
+				choices[0]); // Initial choice
+		return (Integer.parseInt(Character.toString(input.charAt(0))));
 	}
 
 	public int ThreeEngineLocation() {// JT
-		String Message = ("\n Are The Three Engines On The Nose And The Wings?");
-		if (yesno(Message) == true)
-			return 0;
-		else {
-			String Message1 = ("\n Are The Three Engines On The Tail?");
-			if (yesno(Message1) == true)
-				return 1;
-			else
-				return 2;
-		}
+		String[] choices = { "0 - On The Nose And Wings", "1 - On The Tail", "2 - Other" };
+		String input = (String) JOptionPane.showInputDialog(null, "Where Are The Engines?", "Engine Information",
+				JOptionPane.QUESTION_MESSAGE, null, // U
+													// //
+													// icon
+				choices, // Array of choices
+				choices[0]); // Initial choice
+		return (Integer.parseInt(Character.toString(input.charAt(0))));
 	}
 
 	public int OneEngineLocation() {// Ryan
-		String Message = ("\nIs The Engine On The Nose?");
-		if (yesno(Message) == true)
-			return 0;
-		else {
-			Message = ("\nIs The Engine Inside Of The Body?");
-			if (yesno(Message) == true)
-				return 1;
-			else
-				return 2;
-		}
-		// Tail
-
+		String[] choices = { "0 - On The Nose", "1 - Inside Of The Body", "2 - Other" };
+		String input = (String) JOptionPane.showInputDialog(null, "Where Are The Engines?", "Engine Information",
+				JOptionPane.QUESTION_MESSAGE, null, // U
+													// //
+													// icon
+				choices, // Array of choices
+				choices[0]); // Initial choice
+		return (Integer.parseInt(Character.toString(input.charAt(0))));
 	}
+	// Tail
+
 }
